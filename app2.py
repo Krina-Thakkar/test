@@ -27,6 +27,7 @@ def scrape(k):
         print(song_response.status_code)
         soup = BeautifulSoup(song_response.content, 'html.parser')
         title = soup.find('h1', {'class':'mxm-track-title__track '})
+        print(title)
         title = title.contents[1]
         lyrics = ''
         for lyric in soup.find_all('span', {'class':'lyrics__content__ok'}):
